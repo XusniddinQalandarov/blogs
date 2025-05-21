@@ -4,28 +4,27 @@
   "powerOfGettersAndSetters": "TypeScript'da Getter va Setterlarning Kuchi",
   "setterGetter": {
     "title": "Angularda setter va getter foydalanish holati",
-    "intro": "Getter va setter’dan Angular’da @Input xossasiga o‘zgarishlarni aniqlash uchun foydalanamiz. Buning uchun yana bir usul — NgOnChanges, bu haqda maqolada keyinroq gaplashamiz.",
+    "intro": "<code>Getter</code> va <code>setter</code>dan Angular’da <code>@Input</code> xossasiga o‘zgarishlarni aniqlash uchun foydalanamiz. Buning uchun yana bir usul — <code>NgOnChanges</code>, bu haqda maqolada keyinroq gaplashamiz.",
     "childIntro": "Child komponentida:",
     "parentIntro": "Parent komponentida:",
     "whatIsHappeningTitle": "Nima bo‘lmoqda",
-    "whatIsHappening": "Ushbu tuslamada Child komponent obyektni yaratadi, Parent komponent esa tugmalar yordamida (Messi yoki Ronaldo) obyekt qiymatini o‘zgartira oladi. Dastlabki o‘yinchi nomi null ga tenglangani uchun tugma bosilmaguncha nom ekranda ko‘rinmaydi."
+    "whatIsHappening": "Ushbu tuslamada Child komponent obyektni yaratadi, Parent komponent esa tugmalar yordamida (Messi yoki Ronaldo) obyekt qiymatini o‘zgartira oladi. Dastlabki o‘yinchi nomi <code>null</code> ga tenglangani uchun tugma bosilmaguncha nom ekranda ko‘rinmaydi."
   },
   "powerGetters": {
-    "title": "TypeScriptdagi getter va setterlarning kuchi",
-    "intro": "Ob’ektga yo’naltirilgan dasturlashda sinflar bilan ishlaganda, kapsulalash (enkapsulyatsiya) asosiy tushunchalardan biridir. Bu, ma’lumotlarni (xususiyatlar) va ularni qayta ishlaydigan metodlarni bitta birlik — sinf ichida birlashtirishni anglatadi. Bunga sinfning ichki holatiga kirishni nazorat qilish ham kiradi. Keling, buning nima uchun muhimligini va getter hamda setterlar qanday yordam berishini ko‘rib chiqaylik.",
-    "challengeTitle": "Muammo: To‘g‘ridan-to‘g‘ri kirish va uning muammo tug‘dirishi",
-    "challengeDesc": "Tasavvur qiling, bizda oddiy Product sinfi bor:",
+    "title": "TypeScriptdagi getter va setterlarning imkoniyatlari",
+    "intro": "Ob’ektga yo’naltirilgan dasturlashda <code>sinflar</code> bilan ishlaganda, kapsulalash (enkapsulyatsiya) asosiy tushunchalardan biridir. Bu, ma’lumotlarni (<code>xususiyatlar</code>) va ularni qayta ishlaydigan <code>metodlarni</code> bitta birlik — <code>sinf</code> ichida birlashtirishni anglatadi. Bunga <code>sinfning</code> ichki holatiga kirishni nazorat qilish ham kiradi. Keling, buning nima uchun muhimligini va <code>getter</code> hamda <code>setterlar</code> qanday yordam berishini ko‘rib chiqaylik.",
+    "challengeTitle": "Muammo: To‘g‘ridan-to‘g‘ri kirish va uning salbiy oqibatlari",
+    "challengeDesc": "Tasavvur qiling, bizda oddiy <code>Product</code> sinfi bor:",
     "solutionTitle": "Yechim: Getter va setterlarni joriy etish",
-    "solutionIntro": "Getter va setterlar aynan shu vazifani bajaradi! Ular ob’ekt xususiyatlariga o‘qish va yozish uchun usullar bo‘lib, qiymatni qaytarish yoki o‘rnatishdan oldin lo‘gika qo‘shishga imkon beradi.",
-    "solutionDetail": "Keling, Product sinfimizni qayta tuzamiz. Biz maxfiy xususiyat nomini oldiga chiziqli pastki chiziq (_) qo‘yamiz (masalan, _id) va unga mos public get hamda set accessorlarini belgilaymiz:",
-    "solutionAfterCode": "Endi bread.id = 2; yozganingizda xususiyatga to‘g‘ridan-to‘g‘ri emas, balki set id(newId: number) metodiga murojaat qilasiz. Xuddi shunday, bread.id ni o‘qiganingizda get id(): number metodi chaqiriladi. Bu to‘liq muammosiz ishlaydi va bizga validatsiya yoki loglash kabi lo‘gikani bu accessorlar ichiga qo‘shish imkonini beradi.",
+    "solutionIntro": "<code>Getter</code> va <code>setterlar</code> aynan shu vazifani bajaradi! Ular ob’ekt <code>xususiyatlariga</code> o‘qish va yozish uchun <code>usullar</code> bo‘lib, qiymatni qaytarish yoki o‘rnatishdan oldin lo‘gika qo‘shishga imkon beradi.",
+    "solutionDetail": "Keling, <code>Product</code> sinfimizni qayta tuzamiz. Biz <code>maxfiy</code> xususiyat nomini oldiga chiziqli pastki chiziq (<code>_</code>) qo‘yamiz (masalan, <code>_id</code>) va unga mos <code>public</code> <code>get</code> hamda <code>set</code> accessorlarini belgilaymiz:",
+    "solutionAfterCode": "Endi <code>bread.id = 2;</code> yozganingizda xususiyatga to‘g‘ridan-to‘g‘ri emas, balki <code>set id(newId: number)</code> metodiga murojaat qilasiz. Xuddi shunday, <code>bread.id</code> ni o‘qiganingizda <code>get id(): number</code> metodi chaqiriladi. Bu to‘liq muammosiz ishlaydi va bizga validatsiya yoki loglash kabi lo‘gikani bu accessorlar ichiga qo‘shish imkonini beradi.",
     "whyBotherTitle": "Nega buni qilish kerak?",
     "reasonEncapsulation": "<strong>Kapsulalash (Encapsulation):</strong> Ob’ektning ichki holatini himoya qiladi.",
-    "reasonControlledAccess": "<strong>Nazorat qilingan kirish:</strong> Xususiyatlarni qanday o‘qish va o‘zgartirishni siz belgilaysiz.",
-    "reasonValidation": "<strong>Ma’lumotni tekshirish (Validatsiya):</strong> Xususiyat qiymati o‘zgartirilishidan oldin tekshiruvlarni amalga oshiring (masalan, ijobiy ID tekshiruvi).",
-    "reasonComputedProperties": "<strong>Hisoblangan xususiyatlar:</strong> Getterlar boshqa xususiyatlardan hosil bo‘lgan qiymatlarni qaytarishi mumkin.",
-    "reasonSideEffects": "<strong>Yon ta’sirlar (Side Effects):</strong> Xususiyatga murojaat yoki o‘zgartirilganda loglash yoki hodisalar chaqirish kabi amallarni bajaradi.",
-    "concluding": "Getter va setterlar TypeScript va boshqa ob’yektga yo‘naltirilgan tillarda mustahkam, oson saqlanadigan va moslashuvchan sinflar yaratish uchun zarur vositalardir. Ular sinf ichki ishlarini yashirgan holda toza umumiy API ni taqdim etishga yordam beradi."
+    "reasonControlledAccess": "<strong>Nazorat qilingan kirish:</strong> <code>Xususiyatlarni</code> qanday o‘qish va o‘zgartirishni siz belgilaysiz.",
+    "reasonValidation": "<strong>Ma’lumotni tekshirish (Validatsiya):</strong> <code>Xususiyat</code> qiymati o‘zgartirilishidan oldin tekshiruvlarni amalga oshiring (masalan, ijobiy ID tekshiruvi).",
+    "reasonComputedProperties": "<strong>Hisoblangan xususiyatlar:</strong> <code>Getterlar</code> boshqa <code>xususiyatlardan</code> hosil bo‘lgan qiymatlarni qaytarishi mumkin.",
+    "reasonSideEffects": "<strong>Yon ta’sirlar (Side Effects):</strong> <code>Xususiyatga</code> murojaat yoki o‘zgartirilganda loglash yoki hodisalar chaqirish kabi amallarni bajaradi.",
+    "concluding": "<code>Getter</code> va <code>setterlar</code> TypeScript va boshqa ob’yektga yo‘naltirilgan tillarda mustahkam, oson saqlanadigan va moslashuvchan <code>sinflar</code> yaratish uchun zarur vositalardir. Ular <code>sinf</code> ichki ishlarini yashirgan holda toza umumiy <code>API</code> ni taqdim etishga yordam beradi."
   }
-
 }

@@ -1,15 +1,13 @@
 <div class="container mx-auto px-4 py-8 max-w-3xl">
   <article class="prose lg:prose-xl">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800">
-      {{ 'setterGetter.title' | transloco }}
+    <h2 class="text-3xl font-bold mb-6 text-gray-800"
+      [innerHTML]="'setterGetter.title' | transloco">
     </h2>
 
-    <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'setterGetter.intro' | transloco }}
-    </p>
+    <p [innerHTML]="'setterGetter.intro' | transloco" class="text-gray-700 leading-relaxed"></p>
 
-    <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'setterGetter.childIntro' | transloco }}
+    <p class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'setterGetter.childIntro' | transloco">
     </p>
     <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
 import &#123; NgIf &#125; from '&#64;angular/common';
@@ -38,8 +36,8 @@ export class SelectedPlayerComponent &#123;
   &#125;
 &#125;
 </code></pre>
-     <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'setterGetter.parentIntro' | transloco }}
+    <p class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'setterGetter.parentIntro' | transloco">
     </p>
      <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
 import &#123; Component &#125; from '&#64;angular/core';
@@ -62,12 +60,12 @@ export class AppComponent &#123;
   &#125;
 &#125;
 </code></pre>
-  <h2 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">
-      {{ 'setterGetter.whatIsHappeningTitle' | transloco }}
+  <h2 class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'setterGetter.whatIsHappeningTitle' | transloco">
     </h2>
 
-    <p class="text-gray-700 mt-6">
-      {{ 'setterGetter.whatIsHappening' | transloco }}
+    <p class="text-gray-700 mt-6"
+      [innerHTML]="'setterGetter.whatIsHappening' | transloco">
     </p>
   </article>
 </div>

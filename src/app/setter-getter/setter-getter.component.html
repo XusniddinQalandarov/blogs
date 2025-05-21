@@ -1,18 +1,18 @@
 <div class="container mx-auto px-4 py-8 max-w-3xl">
   <article class="prose lg:prose-xl">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800">
-      {{ 'powerGetters.title' | transloco }}
+    <h2 class="text-3xl font-bold mb-6 text-gray-800"
+      [innerHTML]="'powerGetters.title' | transloco">
     </h2>
 
-    <p class="text-gray-700 mb-4">
-      {{ 'powerGetters.intro' | transloco }}
+    <p class="text-gray-700 mb-4"
+      [innerHTML]="'powerGetters.intro' | transloco">
     </p>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">
-      {{ 'powerGetters.challengeTitle' | transloco }}
+    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'powerGetters.challengeTitle' | transloco">
     </h3>
-    <p class="text-gray-700 mb-4">
-      {{ 'powerGetters.challengeDesc' | transloco }}
+    <p class="text-gray-700 mb-4"
+      [innerHTML]="'powerGetters.challengeDesc' | transloco">
     </p>
     <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
 export class Product {{ '{' }}
@@ -56,12 +56,12 @@ console.log('Bread ID after attempting invalid set:', bread.id);
 console.log(bread.price);
 console.log(bread.name);
     </code></pre>
-  <p class="text-gray-700 leading-relaxed mb-4">
-      {{ 'powerGetters.solutionAfterCode' | transloco }}
+ <p class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'powerGetters.solutionAfterCode' | transloco">
     </p>
 
-    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">
-      {{ 'powerGetters.whyBotherTitle' | transloco }}
+    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'powerGetters.whyBotherTitle' | transloco">
     </h3>
     <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-4 pl-4">
       <li class="mb-2" [innerHTML]="'powerGetters.reasonEncapsulation' | transloco"></li>
@@ -71,8 +71,8 @@ console.log(bread.name);
       <li class="mb-2" [innerHTML]="'powerGetters.reasonSideEffects' | transloco"></li>
     </ul>
 
-    <p class="text-gray-700 mt-6">
-      {{ 'powerGetters.concluding' | transloco }}
+    <p class="text-gray-700 mt-6"
+      [innerHTML]="'powerGetters.concluding' | transloco">
     </p>
   </article>
 </div>

@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'tailwindcss' as *;
+:not(pre) > code {
+  @apply bg-gray-200 text-blue-600 font-mono text-sm px-1.5 py-0.5 rounded-md;
+}
+
+pre {
+  @apply bg-gray-100 p-4 rounded-md overflow-x-auto mb-4 font-mono text-base;
+
+  code {
+
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+
+  }
+}

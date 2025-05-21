@@ -4,27 +4,27 @@
   "powerOfGettersAndSetters": "The Power of Getters and Setters in TypeScript",
   "setterGetter": {
     "title": "Setter and Getter use case in Angular",
-    "intro": "We use getter & setter to detect changes to an @Input property in Angular. There's also another way to do this: NgOnChanges, which we will discuss later in the article.",
+    "intro": "We use <code>getter</code> & <code>setter</code> to detect changes to an <code>@Input</code> property in Angular. There's also another way to do this: <code>NgOnChanges</code>, which we will discuss later in the article.",
     "childIntro": "In the Child component:",
     "parentIntro": "In the Parent component:",
     "whatIsHappeningTitle": "What's Happening?",
-    "whatIsHappening": "In this setup, the Child component creates the object, and the Parent component can change the object's value using buttons (Messi or Ronaldo). Since the initial player name is set to null, the name won't appear on the screen until a button is pressed."
+    "whatIsHappening": "In this setup, the Child component creates the object, and the Parent component can change the object's value using buttons (Messi or Ronaldo). Since the initial player name is set to <code>null</code>, the name won't appear on the screen until a button is pressed."
   },
   "powerGetters": {
     "title": "The Power of Getters and Setters in TypeScript",
-    "intro": "When we work with classes in object-oriented programming, encapsulation is a key concept. It's all about bundling data (properties) and methods that operate on that data within a single unit – the class. Part of this means controlling access to a class's internal state. Let's see why this is important and how getters and setters come to the rescue.",
+    "intro": "When we work with <code>classes</code> in object-oriented programming, encapsulation is a key concept. It's all about bundling data (<code>properties</code>) and <code>methods</code> that operate on that data within a single unit – the <code>class</code>. Part of this means controlling access to a <code>class</code>'s internal state. Let's see why this is important and how <code>getters</code> and <code>setters</code> come to the rescue.",
     "challengeTitle": "The Challenge: Direct Access and Its Pitfalls",
-    "challengeDesc": "Imagine we have a simple Product class:",
+    "challengeDesc": "Imagine we have a simple <code>Product</code> class:",
     "solutionTitle": "The Solution: Introducing Getters and Setters",
-    "solutionIntro": "This is where getters and setters shine! They are special methods that provide read and write access to an object's properties while allowing you to add logic before returning or setting a value.",
-    "solutionDetail": "Let’s refactor our Product class. We'll conventionally prefix the private property with an underscore (e.g., _id) and then define public get and set accessors for it:",
-    "solutionAfterCode": "Now, when you write bread.id = 2;, you're not directly accessing a field. Instead, you're calling the set id(newId: number) method. Similarly, reading bread.id calls the get id(): number method. This works perfectly fine and allows us to embed logic, like validation or logging, within these accessors.",
+    "solutionIntro": "This is where <code>getters</code> and <code>setters</code> shine! They are special <code>methods</code> that provide read and write access to an object's <code>properties</code> while allowing you to add logic before returning or setting a value.",
+    "solutionDetail": "Let’s refactor our <code>Product</code> class. We'll conventionally prefix the <code>private</code> property with an underscore (e.g., <code>_id</code>) and then define public <code>get</code> and <code>set</code> accessors for it:",
+    "solutionAfterCode": "Now, when you write <code>bread.id = 2;</code>, you're not directly accessing a field. Instead, you're calling the <code>set id(newId: number)</code> method. Similarly, reading <code>bread.id</code> calls the <code>get id(): number</code> method. This works perfectly fine and allows us to embed logic, like validation or logging, within these accessors.",
     "whyBotherTitle": "Why Bother?",
     "reasonEncapsulation": "<strong>Encapsulation:</strong> Protects the internal state of an object.",
-    "reasonControlledAccess": "<strong>Controlled Access:</strong> You decide how properties are read and written.",
-    "reasonValidation": "<strong>Data Validation:</strong> Implement checks before a property value is changed (as seen with the positive ID check).",
-    "reasonComputedProperties": "<strong>Computed Properties:</strong> Getters can return values derived from other properties.",
-    "reasonSideEffects": "<strong>Side Effects:</strong> Perform actions (like logging or triggering events) when a property is accessed or modified.",
-    "concluding": "Getters and setters are fundamental tools in creating robust, maintainable, and flexible classes in TypeScript and many other object-oriented languages. They allow you to expose a clean public API while keeping the internal workings of your class neatly tucked away."
+    "reasonControlledAccess": "<strong>Controlled Access:</strong> You decide how <code>properties</code> are read and written.",
+    "reasonValidation": "<strong>Data Validation:</strong> Implement checks before a <code>property</code> value is changed (as seen with the positive ID check).",
+    "reasonComputedProperties": "<strong>Computed Properties:</strong> <code>Getters</code> can return values derived from other <code>properties</code>.",
+    "reasonSideEffects": "<strong>Side Effects:</strong> Perform actions (like logging or triggering events) when a <code>property</code> is accessed or modified.",
+    "concluding": "<code>Getters</code> and <code>setters</code> are fundamental tools in creating robust, maintainable, and flexible <code>classes</code> in TypeScript and many other object-oriented languages. They allow you to expose a clean public <code>API</code> while keeping the internal workings of your <code>class</code> neatly tucked away."
   }
 }
