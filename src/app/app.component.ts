@@ -4,7 +4,7 @@ import { SetterGetterComponent } from './setter-getter/setter-getter.component';
 
 @Component({
   selector: 'app-root',
-  imports: [SetterGetterComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
