@@ -4,6 +4,10 @@ import { SetterGetterAngularComponent } from './setter-getter-angular/setter-get
 import { SetterGetterComponent } from './setter-getter/setter-getter.component';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', component: SetterGetterComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: SetterGetterComponent,
+  },
   { path: 'setter-getter-angular', component: SetterGetterAngularComponent },
 ];

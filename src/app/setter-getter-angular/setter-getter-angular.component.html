@@ -1,13 +1,15 @@
 <div class="container mx-auto px-4 py-8 max-w-3xl">
   <article class="prose lg:prose-xl">
     <h2 class="text-3xl font-bold mb-6 text-gray-800">
-      Setter and Getter use case in Angular</h2>
+      {{ 'setterGetter.title' | transloco }}
+    </h2>
+
     <p class="text-gray-700 leading-relaxed mb-4">
-     We use getter & setter to detect changes to an <code>&#64;Input</code> property in Angular. There's also another way to do this: <code>NgOnChanges</code> which we will discuss later in the article.
+      {{ 'setterGetter.intro' | transloco }}
     </p>
 
-
-    <p class="text-gray-700 leading-relaxed mb-4">In Child Component:
+    <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'setterGetter.childIntro' | transloco }}
     </p>
     <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
 import &#123; NgIf &#125; from '&#64;angular/common';
@@ -36,7 +38,8 @@ export class SelectedPlayerComponent &#123;
   &#125;
 &#125;
 </code></pre>
-    <p class="text-gray-700 leading-relaxed mb-4">And in Parent Component:
+     <p class="text-gray-700 leading-relaxed mb-4">
+      {{ 'setterGetter.parentIntro' | transloco }}
     </p>
      <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
 import &#123; Component &#125; from '&#64;angular/core';
@@ -59,11 +62,13 @@ export class AppComponent &#123;
   &#125;
 &#125;
 </code></pre>
-  <h2 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">What is happening</h2>
+  <h2 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">
+      {{ 'setterGetter.whatIsHappeningTitle' | transloco }}
+    </h2>
 
-  <p class="text-gray-700 mt-6">
-    In this setup, the Child Component creates the object, and the Parent Component can change that object’s value using buttons (to “Messi” or “Ronaldo”). Because the initial player name is set to null, no name appears on the screen until a button is clicked.
-  </p>
+    <p class="text-gray-700 mt-6">
+      {{ 'setterGetter.whatIsHappening' | transloco }}
+    </p>
   </article>
 </div>
 

@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-setter-getter',
-  imports: [RouterLink],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './setter-getter.component.html',
   styleUrl: './setter-getter.component.scss',
 })
