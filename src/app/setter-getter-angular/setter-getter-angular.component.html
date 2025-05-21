@@ -2,14 +2,68 @@
   <article class="prose lg:prose-xl">
     <h2 class="text-3xl font-bold mb-6 text-gray-800">
       Setter and Getter use case in Angular</h2>
-
     <p class="text-gray-700 leading-relaxed mb-4">
      We use getter & setter to detect changes to an <code>&#64;Input</code> property in Angular. There's also another way to do this: <code>NgOnChanges</code> which we will discuss later in the article.
     </p>
 
-    <img src="../assets/image.png" alt="img">
+
+    <p class="text-gray-700 leading-relaxed mb-4">In Child Component:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
+import &#123; NgIf &#125; from '&#64;angular/common';
+import &#123; Component, Input &#125; from '&#64;angular/core';
+
+&#64;Component(&#123;
+  selector: 'app-selected-player',
+  imports: [NgIf],
+  template: `
+    &lt;div *ngIf="player"&gt;
+      &lt;h2&gt;Tanlangan o‘yinchi: &#123; &#123; player.name &#125;&#125;&lt;/h2&gt;
+    &lt;/div&gt;
+  `
+&#125;)
+export class SelectedPlayerComponent &#123;
+  private _player: &#123; name: string &#125; | null = null;
+
+  &#64;Input()
+  set player(value: &#123; name: string &#125; | null) &#123;
+    console.log('Yangi o‘yinchi:', value);
+    this._player = value;
+  &#125;
+
+  get player(): &#123; name: string &#125; | null &#123;
+    return this._player;
+  &#125;
+&#125;
+</code></pre>
+    <p class="text-gray-700 leading-relaxed mb-4">And in Parent Component:
+    </p>
+     <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
+import &#123; Component &#125; from '&#64;angular/core';
+
+&#64;Component(&#123;
+  selector: 'app-root',
+  template: `
+    &lt;h1&gt;O&#39;yinchi tanlash&lt;/h1&gt;
+    &lt;button (click)=&quot;selectPlayer('Messi')&quot;&gt;Messi&lt;/button&gt;
+    &lt;button (click)=&quot;selectPlayer('Ronaldo')&quot;&gt;Ronaldo&lt;/button&gt;
+
+    &lt;app-selected-player [player]=&quot;selectedPlayer&quot;&gt;&lt;/app-selected-player&gt;
+  `
+&#125;)
+export class AppComponent &#123;
+  selectedPlayer: &#123; name: string &#125; | null = null;
+
+  selectPlayer(name: string) &#123;
+    this.selectedPlayer = &#123; name &#125;;
+  &#125;
+&#125;
+</code></pre>
+  <h2 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">What is happening</h2>
+
+  <p class="text-gray-700 mt-6">
+    In this setup, the Child Component creates the object, and the Parent Component can change that object’s value using buttons (to “Messi” or “Ronaldo”). Because the initial player name is set to null, no name appears on the screen until a button is clicked.
+  </p>
   </article>
 </div>
-
-<button routerLink="/">Navigate to setter &amp; getter</button>
 
