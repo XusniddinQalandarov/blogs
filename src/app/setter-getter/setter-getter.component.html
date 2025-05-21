@@ -1,0 +1,101 @@
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+  <article class="prose lg:prose-xl">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Mastering Class Privacy: The Power of Getters and Setters in TypeScript</h2>
+
+    <p class="text-gray-700 leading-relaxed mb-4">
+      When we work with classes in object-oriented programming, encapsulation is a key concept. It's all about bundling data (properties) and methods that operate on that data within a single unit – the class. Part of this means controlling access to a class's internal state. Let's see why this is important and how getters and setters come to the rescue.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">The Challenge: Direct Access and Its Pitfalls</h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Imagine we have a simple <code>Product</code> class:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
+export class Product {{ '{' }}
+  private id: number;
+  public price: number;
+  public name: string;
+
+  constructor(id: number, price: number, name: string) {{ '{' }}
+    this.id = id;
+    this.price = price;
+    this.name = name;
+  {{ '}' }}
+{{ '}' }}
+
+let bread = new Product(1, 445, "Tandir Non");
+// bread.id = 2; // This would cause an error: Property 'id' is private and only accessible within class 'Product'.
+console.log(bread.price);
+console.log(bread.name);
+    </code></pre>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      In this setup, the <code>id</code> property is marked as <code>private</code>. This is great for encapsulation, as it prevents direct modification from outside the class. If you try to set <code>bread.id = 2;</code>, TypeScript will rightly throw an error. So, how do we allow controlled access?
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">The Solution: Introducing Getters and Setters</h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      This is where getters and setters shine! They are special methods that provide read and write access to an object's properties while allowing you to add logic before returning or setting a value.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Let's refactor our <code>Product</code> class. We'll conventionally prefix the private property with an underscore (e.g., <code>_id</code>) and then define public <code>get</code> and <code>set</code> accessors for it:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-typescript">
+export class Product {{ '{' }}
+  private _id: number; // Conventionally, private property is prefixed with _
+  public price: number;
+  public name: string;
+
+  constructor(id: number, price: number, name: string) {{ '{' }}
+    this._id = id; // Initialize the private property
+    this.price = price;
+    this.name = name;
+  {{ '}' }}
+
+  public get id(): number {{ '{' }}
+    console.log('Getter for id called');
+    return this._id;
+  {{ '}' }}
+
+  public set id(newId: number) {{ '{' }}
+    console.log('Setter for id called with value:', newId);
+    if (newId <= 0) {{ '{' }} // We can also add a logic in setter!
+      console.warn('Product ID must be positive.');
+      return; // Example: Add validation logic
+    {{ '}' }}
+    this._id = newId; // Correctly assign to the private property
+  {{ '}' }}
+{{ '}' }}
+
+let bread = new Product(1, 445, "Tandir Non");
+
+// Use the getter
+console.log('Initial bread ID:', bread.id); // Accesses via the get id() method
+
+// Use the setter
+bread.id = 2; // Modifies via the set id(value) method
+console.log('Updated bread ID:', bread.id);
+
+bread.id = -5; // Try setting an invalid ID
+console.log('Bread ID after attempting invalid set:', bread.id);
+
+console.log(bread.price);
+console.log(bread.name);
+    </code></pre>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Now, when you write <code>bread.id = 2;</code>, you're not directly accessing a field. Instead, you're calling the <code>set id(newId: number)</code> method. Similarly, reading <code>bread.id</code> calls the <code>get id(): number</code> method. This works perfectly fine and allows us to embed logic, like validation or logging, within these accessors.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4 mt-6 text-gray-800">Why Bother?</h3>
+    <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-4 pl-4">
+      <li class="mb-2"><strong>Encapsulation:</strong> Protects the internal state of an object.</li>
+      <li class="mb-2"><strong>Controlled Access:</strong> You decide how properties are read and written.</li>
+      <li class="mb-2"><strong>Data Validation:</strong> Implement checks before a property value is changed (as seen with the positive ID check).</li>
+      <li class="mb-2"><strong>Computed Properties:</strong> Getters can return values derived from other properties.</li>
+      <li class="mb-2"><strong>Side Effects:</strong> Perform actions (like logging or triggering events) when a property is accessed or modified.</li>
+    </ul>
+
+    <p class="text-gray-700 mt-6">
+      Getters and setters are fundamental tools in creating robust, maintainable, and flexible classes in TypeScript and many other object-oriented languages. They allow you to expose a clean public API while keeping the internal workings of your class neatly tucked away.
+    </p>
+  </article>
+</div>
