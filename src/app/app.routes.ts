@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SetterGetterAngularComponent } from './setter-getter-angular/setter-getter-angular.component';
 import { SetterGetterComponent } from './setter-getter/setter-getter.component';
+import { ControlFlowComponent } from './control-flow/control-flow.component';
 
 export const routes: Routes = [
   {
@@ -10,4 +11,5 @@ export const routes: Routes = [
     component: SetterGetterComponent,
   },
   { path: 'setter-getter-angular', component: SetterGetterAngularComponent },
+  { path: 'control-flow', component: ControlFlowComponent },
 ];

@@ -26,5 +26,19 @@
     "reasonComputedProperties": "<strong>Computed Properties:</strong> <code>Getters</code> can return values derived from other <code>properties</code>.",
     "reasonSideEffects": "<strong>Side Effects:</strong> Perform actions (like logging or triggering events) when a <code>property</code> is accessed or modified.",
     "concluding": "<code>Getters</code> and <code>setters</code> are fundamental tools in creating robust, maintainable, and flexible <code>classes</code> in TypeScript and many other object-oriented languages. They allow you to expose a clean public <code>API</code> while keeping the internal workings of your <code>class</code> neatly tucked away."
-  }
+  },
+  "controlFlow": {
+  "title": "Angular Control-Flow: *ngIf vs @if, *ngFor vs @for & @switch",
+  "intro": "In Angular you've traditionally used <code>*ngIf</code>, <code>*ngFor</code> and <code>[ngSwitch]</code> for conditional and list rendering. As of v16 there are also the new <code>@if</code>, <code>@for</code> and <code>@switch</code> syntaxes that look and feel more like plain JavaScript, reduce boilerplate and improve readability.",
+  "ifVsNgIfTitle": "*ngIf vs @if",
+  "ifVsNgIfDesc": "<code>*ngIf</code> is Angular's built-in structural directive for conditionally including a template. <code>@if</code> offers a more concise, JS-style syntax for the same use case.",
+  "nestedIfDesc": "With <code>*ngIf</code>+<code>ng-template</code> you use an <code>else</code> template block, whereas <code>@if</code> lets you write <code>@else</code> directly in the same block.",
+  "forVsNgForTitle": "*ngFor vs @for",
+  "forVsNgForDesc": "<code>*ngFor</code> iterates over a collection in the template. <code>@for</code> gives you a cleaner loop syntax and even supports an <code>@empty</code> clause for handling empty arrays.",
+  "trackFeatureTitle": "Optimizing with track vs trackBy",
+  "trackFeatureDesc": "In <code>*ngFor</code> you pass a <code>trackBy</code> function to optimize <code>DOM</code> updates. In <code>@for</code> you simply add <code>track item.id</code> to the loop declaration for the same effect.",
+  "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
+  "switchVsNgSwitchDesc": "<code>*ngSwitch</code> provides <code>switch-case-default</code> in your template. <code>@switch</code> brings a JS-style <code>@case</code> and <code>@default</code> directly into your markup.",
+  "conclusion": "Angular v16's new control-flow directives (<code>@if</code>, <code>@for</code>, <code>@switch</code>) complement the traditional <code>*ngIf</code>, <code>*ngFor</code> and <code>[ngSwitch]</code>, giving you a more JavaScript-like syntax that cuts boilerplate and makes templates easier to read."
+}
 }

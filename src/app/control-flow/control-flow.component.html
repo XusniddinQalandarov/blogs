@@ -1,0 +1,135 @@
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+  <article class="prose lg:prose-xl">
+    <h2
+      class="text-3xl font-bold mb-6 text-gray-800"
+      [innerHTML]="'controlFlow.title' | transloco"
+    ></h2>
+
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.intro' | transloco"
+    ></p>
+
+    <h3
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'controlFlow.ifVsNgIfTitle' | transloco"
+    ></h3>
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.ifVsNgIfDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-html">
+&lt;!-- *ngIf example --&gt;
+&lt;p *ngIf="user.isAdmin"&gt;Welcome, admin!&lt;/p&gt;
+
+&lt;!-- &#64;if example --&gt;
+&#64;if (user.isAdmin) {{ '{' }}
+  &lt;p&gt;Welcome, admin!&lt;/p&gt;
+{{ '}' }}
+    </code></pre>
+
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.nestedIfDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-html">
+&lt;!-- *ngIf with else --&gt;
+&lt;ng-container *ngIf="condition; else elseBlock"&gt;
+  &lt;p&gt;Condition is true&lt;/p&gt;
+&lt;/ng-container&gt;
+&lt;ng-template #elseBlock&gt;
+  &lt;p&gt;Condition is false&lt;/p&gt;
+&lt;/ng-template&gt;
+
+&lt;!-- &#64;if with &#64;else --&gt;
+&#64;if (condition) {{ '{' }}
+  &lt;p&gt;Condition is true&lt;/p&gt;
+{{ '}' }} &#64;else {{ '{' }}
+  &lt;p&gt;Condition is false&lt;/p&gt;
+{{ '}' }}
+    </code></pre>
+
+    <h3
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'controlFlow.forVsNgForTitle' | transloco"
+    ></h3>
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.forVsNgForDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-html">
+&lt;!-- *ngFor with empty check --&gt;
+&lt;ul&gt;
+  &lt;li *ngFor="let item of items"&gt;{{ '{{ item }}' }}&lt;/li&gt;
+  &lt;li *ngIf="items.length === 0"&gt;No items found&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &#64;for with &#64;empty --&gt;
+&lt;ul&gt;
+  &#64;for (item of items) {{ '{' }}
+    &lt;li&gt;{{ '{{ item }}' }}&lt;/li&gt;
+  {{ '}' }} &#64;empty {{ '{' }}
+    &lt;li&gt;No items found&lt;/li&gt;
+  {{ '}' }}
+&lt;/ul&gt;
+    </code></pre>
+
+    <h3
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'controlFlow.trackFeatureTitle' | transloco"
+    ></h3>
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.trackFeatureDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-html">
+&#64;for (item of cardsBeforeMap; track item.name) {{ '{' }}
+  &lt;app-region-card [data]="item" class="h-full"&gt;&lt;/app-region-card&gt;
+{{ '}' }}
+    </code></pre>
+
+    <h3
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'controlFlow.switchVsNgSwitchTitle' | transloco"
+    ></h3>
+    <p
+      class="text-gray-700 mb-4"
+      [innerHTML]="'controlFlow.switchVsNgSwitchDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-html">
+&lt;!-- *ngSwitch example --&gt;
+&lt;div [ngSwitch]="status"&gt;
+  &lt;p *ngSwitchCase="'active'"&gt;Active&lt;/p&gt;
+  &lt;p *ngSwitchCase="'inactive'"&gt;Inactive&lt;/p&gt;
+  &lt;p *ngSwitchDefault&gt;Pending&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- &#64;switch example --&gt;
+&#64;switch (status) {{ '{' }}
+  &#64;case ('active') {{ '{' }} &lt;p&gt;Active&lt;/p&gt; {{ '}' }}
+  &#64;case ('inactive') {{ '{' }} &lt;p&gt;Inactive&lt;/p&gt; {{ '}' }}
+  &#64;default {{ '{' }} &lt;p&gt;Pending&lt;/p&gt; {{ '}' }}
+{{ '}' }}
+    </code></pre>
+
+    <p
+      class="text-gray-700 mt-6"
+      [innerHTML]="'controlFlow.conclusion' | transloco"
+    ></p>
+  </article>
+</div>

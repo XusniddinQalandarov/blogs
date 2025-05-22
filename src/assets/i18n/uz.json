@@ -26,5 +26,19 @@
     "reasonComputedProperties": "<strong>Hisoblangan xususiyatlar:</strong> <code>Getterlar</code> boshqa <code>xususiyatlardan</code> hosil bo‘lgan qiymatlarni qaytarishi mumkin.",
     "reasonSideEffects": "<strong>Yon ta’sirlar (Side Effects):</strong> <code>Xususiyatga</code> murojaat yoki o‘zgartirilganda loglash yoki hodisalar chaqirish kabi amallarni bajaradi.",
     "concluding": "<code>Getter</code> va <code>setterlar</code> TypeScript va boshqa ob’yektga yo‘naltirilgan tillarda mustahkam, oson saqlanadigan va moslashuvchan <code>sinflar</code> yaratish uchun zarur vositalardir. Ular <code>sinf</code> ichki ishlarini yashirgan holda toza umumiy <code>API</code> ni taqdim etishga yordam beradi."
-  }
+  },
+  "controlFlow": {
+  "title": "Angular boshqaruv oqimi: *ngIf vs @if, *ngFor vs @for va @switch",
+  "intro": "Angularda shartli va ro'yxatni render qilish uchun an'anaviy <code>*ngIf</code>, <code>*ngFor</code> va <code>[ngSwitch]</code> direktivalari ishlatiladi. V16 dan esa <code>@if</code>, <code>@for</code> va <code>@switch</code> sintaksislari paydo bo'ldi – ular JavaScript ga o'xshash, kamroq kod bilan, o'qilishi qulay yechim taqdim etadi.",
+  "ifVsNgIfTitle": "*ngIf vs @if",
+  "ifVsNgIfDesc": "<code>*ngIf</code> Angularning standart struktural direktivasi bo'lib, shartga qarab shablonni qo'shadi yoki olib tashlaydi. <code>@if</code> esa xuddi JS sintaksisiday shartni yozishga imkon beradi.",
+  "nestedIfDesc": "<code>*ngIf</code> bilan <code>ng-template</code> yordamida <code>else</code> blokiga murojaat qilinadi, <code>@if</code> da esa <code>@else</code> ni to'g'ridan-to'g'ri bir blok ichida yozasiz.",
+  "forVsNgForTitle": "*ngFor vs @for",
+  "forVsNgForDesc": "<code>*ngFor</code> kolleksiyani aylantirib chiqadi. <code>@for</code> esa yanada toza sintaksis beradi va <code>@empty</code> bilan bo'sh holatni ham tekshiradi.",
+  "trackFeatureTitle": "Optimallashtirish: track vs trackBy",
+  "trackFeatureDesc": "<code>*ngFor</code> da <code>DOM</code> yangilanishini optimallashtirish uchun <code>trackBy</code> funksiyasini uzatasiz. <code>@for</code> da esa sikl boshi deklaratsiyasiga <code>track item.id</code> qo'shish kifoya.",
+  "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
+  "switchVsNgSwitchDesc": "<code>*ngSwitch</code> shablonda <code>switch-case-default</code> tuzilmasini beradi. <code>@switch</code> esa xuddi JavaScript dagi kabi <code>@case</code> va <code>@default</code> yozishga imkon beradi.",
+  "conclusion": "Angular v16 bilan kelgan <code>@if</code>, <code>@for</code>, <code>@switch</code> direktivalari an'anaviy <code>*ngIf</code>, <code>*ngFor</code> va <code>[ngSwitch]</code> ni to'ldiradi, kod hajmini kamaytiradi va shablonlarni o'qishni osonlashtiradi."
+}
 }

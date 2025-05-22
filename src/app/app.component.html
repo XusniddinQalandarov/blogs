@@ -1,16 +1,33 @@
 <div class="flex flex-col h-screen">
-  <header class="fixed top-0 left-0 right-0 h-16 px-4 bg-gray-100 border-b border-gray-300 flex justify-between items-center z-50">
-
-     <div class="flex items-center">
-      <button (click)="toggleSidebar()" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 mr-3" aria-label="Toggle sidebar">
-        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  <header
+    class="fixed top-0 left-0 right-0 h-16 px-4 bg-gray-100 border-b border-gray-300 flex justify-between items-center z-50"
+  >
+    <!-- ... header content remains unchanged ... -->
+    <div class="flex items-center">
+      <button
+        (click)="toggleSidebar()"
+        class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 mr-3"
+        aria-label="Toggle sidebar"
+      >
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
         </svg>
       </button>
-      <h1 class="text-xl font-bold">{{ 'blogTitle' | transloco }}</h1>
+      <h1 class="text-xl font-bold">{{ "blogTitle" | transloco }}</h1>
     </div>
 
-     <div class="relative language-dropdown-container">
+    <div class="relative language-dropdown-container">
       <button
         (click)="toggleLangDropdown()"
         type="button"
@@ -20,21 +37,33 @@
         [attr.aria-expanded]="isLangDropdownOpen"
       >
         {{ activeLang.toUpperCase() }}
-        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        <svg
+          class="-mr-1 ml-2 h-5 w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          />
         </svg>
       </button>
 
+      <!-- Replace *ngIf with @if -->
+      @if (isLangDropdownOpen) {
       <div
-        *ngIf="isLangDropdownOpen"
         class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"
       >
         <div class="py-1" role="none">
+          <!-- Replace *ngFor with @for -->
+          @for (lang of availableLangs; track lang) {
           <a
-            *ngFor="let lang of availableLangs"
             (click)="selectLang(lang)"
             href="javascript:void(0);"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 text-center"
@@ -44,15 +73,18 @@
           >
             {{ lang.toUpperCase() }}
           </a>
+          }
         </div>
       </div>
+      }
     </div>
   </header>
 
   <div class="flex flex-1 pt-16 overflow-hidden">
     <aside
       class="fixed top-16 left-0 bottom-0 z-30 w-64 bg-gray-200 p-4 border-r border-gray-300 overflow-y-auto transform transition-transform duration-300 ease-in-out"
-      [ngClass]="{ 'translate-x-0': isSidebarOpen, '-translate-x-full': !isSidebarOpen }"
+      [class.translate-x-0]="isSidebarOpen"
+      [class.-translate-x-full]="!isSidebarOpen"
     >
       <nav>
         <ul class="space-y-2">
@@ -61,32 +93,44 @@
               routerLink="/"
               routerLinkActive="bg-gray-300"
               [routerLinkActiveOptions]="{ exact: true }"
-              class="block p-2 rounded-md hover:bg-gray-300"
+              class="block p-2 rounded-md hover:bg-gray-300 truncate"
               (click)="isSidebarOpen = false"
-            >{{ 'powerOfGettersAndSetters' | transloco }}</a>
+              >{{ "powerOfGettersAndSetters" | transloco }}</a
+            >
           </li>
           <li>
             <a
               routerLink="/setter-getter-angular"
               routerLinkActive="bg-gray-300"
-              class="block p-2 rounded-md hover:bg-gray-300"
+              class="block p-2 rounded-md hover:bg-gray-300 truncate"
               (click)="isSidebarOpen = false"
-            >{{ 'navigateToAngularSetterGetter' | transloco }}</a>
+              >{{ "navigateToAngularSetterGetter" | transloco }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/control-flow"
+              routerLinkActive="bg-gray-300"
+              class="block p-2 rounded-md hover:bg-gray-300 truncate"
+              (click)="isSidebarOpen = false"
+              >{{ "controlFlow.title" | transloco }}</a
+            >
           </li>
         </ul>
       </nav>
     </aside>
 
+    @if (isSidebarOpen) {
     <div
-      *ngIf="isSidebarOpen"
       (click)="toggleSidebar()"
       class="fixed left-0 right-0 bottom-0 top-16 z-20 md:hidden"
       aria-hidden="true"
     ></div>
+    }
 
     <main
       class="flex-1 p-6 overflow-y-auto transition-all duration-300 ease-in-out"
-      [ngClass]="{ 'ml-64': isSidebarOpen }"
+      [class.ml-64]="isSidebarOpen"
     >
       <router-outlet></router-outlet>
     </main>

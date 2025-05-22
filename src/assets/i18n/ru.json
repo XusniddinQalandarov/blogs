@@ -26,5 +26,19 @@
     "reasonComputedProperties": "<strong>Вычисляемые свойства:</strong> <code>геттеры</code> могут возвращать значения, вычисленные на основе других <code>свойств</code>.",
     "reasonSideEffects": "<strong>Побочные эффекты (Side Effects):</strong> выполнение действий (например, логирование или вызов событий) при доступе или изменении <code>свойства</code>.",
     "concluding": "<code>Геттеры</code> и <code>сеттеры</code> — это фундаментальные инструменты для создания надёжных, поддерживаемых и гибких <code>классов</code> в TypeScript и многих других ООП-языках. Они позволяют предоставить чистый <code>публичный API</code>, сохраняя внутреннюю логику <code>класса</code> скрытой."
-  }
+  },
+ "controlFlow": {
+  "title": "Поток управления в Angular: *ngIf vs @if, *ngFor vs @for и @switch",
+  "intro": "В Angular для условного и циклического рендеринга традиционно используются <code>*ngIf</code>, <code>*ngFor</code> и <code>[ngSwitch]</code>. С версии 16 появились новые синтаксисы <code>@if</code>, <code>@for</code> и <code>@switch</code> – они напоминают чистый JS, сокращают шаблонный код и улучшают читаемость.",
+  "ifVsNgIfTitle": "*ngIf vs @if",
+  "ifVsNgIfDesc": "<code>*ngIf</code> — встроенная структурная директива для условного отображения шаблона. <code>@if</code> предлагает более лаконичный JS-подобный синтаксис для той же задачи.",
+  "nestedIfDesc": "С помощью <code>*ngIf</code> и <code>ng-template</code> вы создаёте блок <code>else</code>, тогда как <code>@if</code> позволяет писать <code>@else</code> прямо в том же блоке.",
+  "forVsNgForTitle": "*ngFor vs @for",
+  "forVsNgForDesc": "<code>*ngFor</code> выполняет итерацию по коллекции. <code>@for</code> даёт более понятный синтаксис цикла и поддерживает блок <code>@empty</code> для обработки пустого массива.",
+  "trackFeatureTitle": "Оптимизация: track vs trackBy",
+  "trackFeatureDesc": "В <code>*ngFor</code> можно передать функцию <code>trackBy</code> для оптимизации обновлений <code>DOM</code>. В <code>@for</code> достаточно добавить <code>track item.id</code> в объявление цикла для того же эффекта.",
+  "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
+  "switchVsNgSwitchDesc": "<code>*ngSwitch</code> предоставляет <code>switch-case-default</code> в шаблоне. <code>@switch</code> позволяет писать тот же синтаксис <code>@case</code> и <code>@default</code> как в JavaScript.",
+  "conclusion": "Новые директивы управления потоком (<code>@if</code>, <code>@for</code>, <code>@switch</code>) в Angular 16 дополняют традиционные <code>*ngIf</code>, <code>*ngFor</code> и <code>[ngSwitch]</code>, предлагая более лаконичный JS-подобный синтаксис, уменьшающий шаблонный код и улучшающий читаемость."
+}
 }
