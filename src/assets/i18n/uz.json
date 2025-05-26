@@ -40,5 +40,30 @@
   "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
   "switchVsNgSwitchDesc": "<code>*ngSwitch</code> shablonda <code>switch-case-default</code> tuzilmasini beradi. <code>@switch</code> esa xuddi JavaScript dagi kabi <code>@case</code> va <code>@default</code> yozishga imkon beradi.",
   "conclusion": "Angular v16 bilan kelgan <code>@if</code>, <code>@for</code>, <code>@switch</code> direktivalari an'anaviy <code>*ngIf</code>, <code>*ngFor</code> va <code>[ngSwitch]</code> ni to'ldiradi, kod hajmini kamaytiradi va shablonlarni o'qishni osonlashtiradi."
+  },
+"pipes": {
+  "title": "Angular'da Pure va Impure Pipe'lar",
+  "intro": "Angular'da <code>pipe</code>'lar ma'lumotlarni foydalanuvchiga qulayroq ko'rinishga keltirish uchun ularni bir formatdan boshqasiga o'zgartirish uchun ishlatiladi.",
+  "howItWorks": "<code>Pipe</code> kiruvchi qiymatni (<code>input</code>) qabul qiladi va ma'lumotni o'zgartiradi.",
+  "example": "Masalan:",
+  "usage": "<code>Pipe</code>'ni ishlatish uchun uni komponentingizning <code>imports</code> massiviga qo'shish kifoya.",
+  "defaultCurrency": "Standart holatda, <code>CurrencyPipe</code> qiymatlarni <code>'$'</code> belgisi bilan qaytaradi; buni o'zgartirish uchun <code>':'</code> belgisidan so'ng kerakli valyuta kodini yozing, masalan: <code>currency: 'UZS'</code>.",
+  "commonPipesTitle": "Angular’ning o'rnatilgan eng koʻp ishlatiladigan pipe’lari:",
+  "asyncPipe": "<code>AsyncPipe</code>: <code>Promise</code> yoki <code>Observable</code>'lardan qiymatlarni o'qiydi",
+  "currencyPipe": "<code>CurrencyPipe</code>: raqamlarni valyuta formatiga o'tkazadi",
+  "datePipe": "<code>DatePipe</code>: sanalarni formatlaydi",
+  "jsonPipe": "<code>JsonPipe</code>: obyektlarni <code>JSON</code> qatoriga o'zgartiradi",
+  "upperCasePipe": "<code>UpperCasePipe</code>: matnni bosh harflarga o'tkazadi",
+  "titleCasePipe": "<code>TitleCasePipe</code>: har bir so'zning birinchi harfini bosh harfga o'zgartiradi",
+  "lowerCasePipe": "<code>LowerCasePipe</code>: matnni kichik harflarga o'tkazadi",
+  "percentPipe": "<code>PercentPipe</code>: raqamlarni foiz formatiga o'tkazadi",
+  "pureImpureHeading": "Pure va Impure pipe'lar tushunchasi:",
+  "pureDesc": "<code>Pure pipe</code> bir xil kiruvchi ma'lumot (<code>input</code>) uchun har doim bir xil chiquvchi ma'lumot (<code>output</code>) qaytaradi. Angular uni faqat kiruvchi ma'lumotning <code>manbasi</code> (reference) o'zgarganda qayta ishga tushiradi.",
+  "impureDesc": "<code>Impure pipe</code> bir xil kiruvchi ma'lumot (<code>input</code>) uchun ham har xil natija qaytarishi mumkin va har bir <code>o'zgarishlarni aniqlash siklida</code> (change-detection cycle) ishga tushadi. Bu serverdan yoki fayldan olinadigan ma'lumotlar uchun foydali bo'lishi mumkin, lekin <code>samaradorlikka</code> (performance) salbiy ta'sir qilishi mumkin.",
+  "pureExampleTitle": "Pure Pipe uchun misol:",
+  "impureExampleTitle": "Impure Pipe uchun misol:",
+  "conclusionTitle": "Xulosa:",
+  "conclusion": "Zarurat tug'ilganda <code>impure pipe</code>'lardan foydalanish mumkin, ammo ular har bir <code>sikl</code> (cycle) davomida ishlagani uchun ilovaning <code>samaradorligini</code> (performance) pasaytirishi mumkin. Iloji boricha <code>pure pipe</code>'lardan foydalanish tavsiya etiladi.",
+  "lazyNote": "<code>Pure pipe</code>'lar “<code>dangasa</code>” (lazy) hisoblanadi: ular kiruvchi ma'lumotning <code>manbasi</code> (reference) yoki qiymati o'zgarmaguncha ishga tushmaydi."
 }
 }

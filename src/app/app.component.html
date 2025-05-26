@@ -93,7 +93,7 @@
               routerLink="/"
               routerLinkActive="bg-gray-300"
               [routerLinkActiveOptions]="{ exact: true }"
-              class="block p-2 rounded-md hover:bg-gray-300 truncate"
+              class="block p-2 rounded-md hover:bg-gray-300"
               (click)="isSidebarOpen = false"
               >{{ "powerOfGettersAndSetters" | transloco }}</a
             >
@@ -102,7 +102,7 @@
             <a
               routerLink="/setter-getter-angular"
               routerLinkActive="bg-gray-300"
-              class="block p-2 rounded-md hover:bg-gray-300 truncate"
+              class="block p-2 rounded-md hover:bg-gray-300 break-normal"
               (click)="isSidebarOpen = false"
               >{{ "navigateToAngularSetterGetter" | transloco }}</a
             >
@@ -111,9 +111,18 @@
             <a
               routerLink="/control-flow"
               routerLinkActive="bg-gray-300"
-              class="block p-2 rounded-md hover:bg-gray-300 truncate"
+              class="block p-2 rounded-md hover:bg-gray-300"
               (click)="isSidebarOpen = false"
               >{{ "controlFlow.title" | transloco }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/pipes"
+              routerLinkActive="bg-gray-300"
+              class="block p-2 rounded-md hover:bg-gray-300"
+              (click)="isSidebarOpen = false"
+              >{{ "pipes.title" | transloco }}</a
             >
           </li>
         </ul>

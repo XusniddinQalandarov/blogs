@@ -1,0 +1,122 @@
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+  <article class="prose lg:prose-xl">
+    <h2
+      class="text-3xl font-bold mb-6 text-gray-800"
+      [innerHTML]="'pipes.title' | transloco"
+    ></h2>
+
+    <p
+      class="text-gray-700 leading-relaxed"
+      [innerHTML]="'pipes.intro' | transloco"
+    ></p>
+
+    <p
+      class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'pipes.howItWorks' | transloco"
+    ></p>
+
+    <p
+      class="font-bold leading-relaxed mb-4"
+      [innerHTML]="'pipes.example' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-typescript">
+import &#123; Component &#125; from '&#64;angular/core';
+import &#123; CurrencyPipe &#125; from '&#64;angular/common';
+
+&#64;Component(&#123;
+  selector: 'app-root',
+  imports: [CurrencyPipe],
+  template: \`
+    &lt;main&gt;
+      &lt;p&gt;Total: &#123; &#123; amount | currency &#125;&#125;&lt;/p&gt;
+    &lt;/main&gt;
+  \`,
+&#125;)
+export class AppComponent &#123;
+  amount = 50.2;
+&#125;
+    </code></pre>
+
+    <p
+      class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'pipes.usage' | transloco"
+    ></p>
+
+    <p
+      class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'pipes.defaultCurrency' | transloco"
+    ></p>
+
+    <h3
+      class="text-xl font-semibold mb-2 text-gray-800"
+      [innerHTML]="'pipes.commonPipesTitle' | transloco"
+    ></h3>
+    <ul class="list-disc list-inside mb-4 text-gray-700 leading-relaxed">
+      <li [innerHTML]="'pipes.asyncPipe' | transloco"></li>
+      <li [innerHTML]="'pipes.currencyPipe' | transloco"></li>
+      <li [innerHTML]="'pipes.datePipe' | transloco"></li>
+      <li [innerHTML]="'pipes.jsonPipe' | transloco"></li>
+      <li [innerHTML]="'pipes.upperCasePipe' | transloco"></li>
+      <li [innerHTML]="'pipes.titleCasePipe' | transloco"></li>
+      <li [innerHTML]="'pipes.lowerCasePipe' | transloco"></li>
+      <li [innerHTML]="'pipes.percentPipe' | transloco"></li>
+    </ul>
+
+    <h2
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'pipes.pureImpureHeading' | transloco"
+    ></h2>
+
+    <p
+      class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'pipes.pureDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-typescript">
+import &#123; Pipe, PipeTransform &#125; from '&#64;angular/core';
+
+&#64;Pipe(&#123; name: 'uppercase', pure: true &#125;)
+export class UppercasePipe implements PipeTransform &#123;
+  transform(value: string): string &#123;
+    return value.toUpperCase();
+  &#125;
+&#125;
+    </code></pre>
+
+    <p
+      class="text-gray-700 leading-relaxed mb-4"
+      [innerHTML]="'pipes.impureDesc' | transloco"
+    ></p>
+
+    <pre
+      class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"
+    ><code class="language-typescript">
+import &#123; Pipe, PipeTransform &#125; from '&#64;angular/core';
+
+&#64;Pipe(&#123; name: 'currentTime', pure: false &#125;)
+export class CurrentTimePipe implements PipeTransform &#123;
+  transform(value: Date): Date &#123;
+    return new Date();
+  &#125;
+&#125;
+    </code></pre>
+
+    <h2
+      class="text-2xl font-semibold mb-4 mt-6 text-gray-800"
+      [innerHTML]="'pipes.conclusionTitle' | transloco"
+    ></h2>
+    <p
+      class="text-gray-700 leading-relaxed"
+      [innerHTML]="'pipes.conclusion' | transloco"
+    ></p>
+    <p
+      class="text-gray-700 leading-relaxed"
+      [innerHTML]="'pipes.lazyNote' | transloco"
+    ></p>
+  </article>
+</div>

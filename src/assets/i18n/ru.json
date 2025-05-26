@@ -40,5 +40,29 @@
   "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
   "switchVsNgSwitchDesc": "<code>*ngSwitch</code> предоставляет <code>switch-case-default</code> в шаблоне. <code>@switch</code> позволяет писать тот же синтаксис <code>@case</code> и <code>@default</code> как в JavaScript.",
   "conclusion": "Новые директивы управления потоком (<code>@if</code>, <code>@for</code>, <code>@switch</code>) в Angular 16 дополняют традиционные <code>*ngIf</code>, <code>*ngFor</code> и <code>[ngSwitch]</code>, предлагая более лаконичный JS-подобный синтаксис, уменьшающий шаблонный код и улучшающий читаемость."
+},"pipes": {
+  "title": "Чистые и Нечистые Пайпы в Angular",
+  "intro": "Пайпы в Angular используются для преобразования данных в другой формат, делая их более удобными для пользователя.",
+  "howItWorks": "<code>Пайп</code> принимает входное значение (<code>input</code>) и преобразует данные.",
+  "example": "Например:",
+  "usage": "Чтобы использовать <code>пайп</code>, просто добавьте его в массив <code>imports</code>.",
+  "defaultCurrency": "По умолчанию <code>CurrencyPipe</code> возвращает значения в <code>'$'</code>; чтобы изменить это, добавьте <code>':'</code> и нужную валюту, например <code>currency: 'UZS'</code>.",
+  "commonPipesTitle": "Распространённые встроенные пайпы Angular:",
+  "asyncPipe": "<code>AsyncPipe</code>: получает данные из <code>Promise</code> или <code>Observable</code>",
+  "currencyPipe": "<code>CurrencyPipe</code>: форматирует число как валюту",
+  "datePipe": "<code>DatePipe</code>: форматирует даты",
+  "jsonPipe": "<code>JsonPipe</code>: преобразует объекты в <code>JSON</code>-строки",
+  "upperCasePipe": "<code>UpperCasePipe</code>: преобразует текст в верхний регистр",
+  "titleCasePipe": "<code>TitleCasePipe</code>: делает заглавной первую букву каждого слова",
+  "lowerCasePipe": "<code>LowerCasePipe</code>: преобразует текст в нижний регистр",
+  "percentPipe": "<code>PercentPipe</code>: форматирует число как процент",
+  "pureImpureHeading": "Чистые и Нечистые Пайпы:",
+  "pureDesc": "<code>Чистый пайп</code> всегда возвращает одинаковый результат (<code>output</code>) для одинакового входа (<code>input</code>). Angular обновляет его только при изменении <code>ссылки</code> на вход (input reference).",
+  "impureDesc": "<code>Нечистый пайп</code> может выдавать разные результаты (<code>output</code>) для одного и того же входа (<code>input</code>) и срабатывает при каждом <code>цикле обнаружения изменений</code> (change-detection cycle). Полезен для данных с сервера/файла, но снижает <code>производительность</code> (performance).",
+  "pureExampleTitle": "Пример чистого пайпа:",
+  "impureExampleTitle": "Пример нечистого пайпа:",
+  "conclusionTitle": "Вывод:",
+  "conclusion": "<code>Нечистые пайпы</code> можно использовать при необходимости, но они выполняются каждый <code>цикл</code> (cycle) и влияют на <code>производительность</code> (performance). По возможности используйте <code>чистые пайпы</code>.",
+  "lazyNote": "<code>Чистые пайпы</code> «<code>ленивы</code>» (lazy): они не запускаются, пока не изменится <code>ссылка</code> на вход (input reference) или значение входа."
 }
 }

@@ -40,5 +40,30 @@
   "switchVsNgSwitchTitle": "*ngSwitch vs @switch",
   "switchVsNgSwitchDesc": "<code>*ngSwitch</code> provides <code>switch-case-default</code> in your template. <code>@switch</code> brings a JS-style <code>@case</code> and <code>@default</code> directly into your markup.",
   "conclusion": "Angular v16's new control-flow directives (<code>@if</code>, <code>@for</code>, <code>@switch</code>) complement the traditional <code>*ngIf</code>, <code>*ngFor</code> and <code>[ngSwitch]</code>, giving you a more JavaScript-like syntax that cuts boilerplate and makes templates easier to read."
+},
+"pipes": {
+  "title": "Pure vs. Impure Pipes in Angular",
+  "intro": "Pipes in Angular are used to transform data into another format, making it more user-friendly.",
+  "howItWorks": "A <code>pipe</code> takes an <code>input</code> value and transforms the data.",
+  "example": "For example:",
+  "usage": "To use a <code>pipe</code>, simply add it to the <code>imports</code> array.",
+  "defaultCurrency": "By default, the <code>CurrencyPipe</code> returns values in <code>'$'</code>; to change it, append <code>':'</code> and your desired currency, e.g. <code>currency: 'UZS'</code>.",
+  "commonPipesTitle": "Common built-in Angular pipes include:",
+  "asyncPipe": "<code>AsyncPipe</code>: reads from <code>Promises</code> or <code>Observables</code>",
+  "currencyPipe": "<code>CurrencyPipe</code>: formats numbers as currency",
+  "datePipe": "<code>DatePipe</code>: formats dates",
+  "jsonPipe": "<code>JsonPipe</code>: converts objects to <code>JSON</code> strings",
+  "upperCasePipe": "<code>UpperCasePipe</code>: transforms text to uppercase",
+  "titleCasePipe": "<code>TitleCasePipe</code>: capitalizes the first letter of each word",
+  "lowerCasePipe": "<code>LowerCasePipe</code>: transforms text to lowercase",
+  "percentPipe": "<code>PercentPipe</code>: formats numbers as percentages",
+  "pureImpureHeading": "Pure vs. Impure Pipes:",
+  "pureDesc": "A <code>pure pipe</code> always returns the same <code>output</code> for the same <code>input</code>. Angular only re-evaluates it when the <code>input reference</code> changes.",
+  "impureDesc": "An <code>impure pipe</code> can return different <code>outputs</code> for the same <code>input</code> and runs on every <code>change-detection cycle</code>. Useful for server/file data but can hurt <code>performance</code>.",
+  "pureExampleTitle": "Pure Pipe example:",
+  "impureExampleTitle": "Impure Pipe example:",
+  "conclusionTitle": "Conclusion:",
+  "conclusion": "While you can use <code>impure pipes</code> when needed, they run every <code>cycle</code> and degrade <code>performance</code>. Use <code>pure pipes</code> whenever possible.",
+  "lazyNote": "<code>Pure pipes</code> are “<code>lazy</code>”: they won’t run unless the <code>input reference</code> or value changes."
 }
 }
